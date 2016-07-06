@@ -122,7 +122,8 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 .phone-container {
     position: relative;
     max-width: 400px;
-    margin: 0 3rem;
+    margin: 0 auto;
+    padding: 0 20px;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -187,7 +188,6 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 .align-vertical.pure-g {
     display: table-cell;
     vertical-align: middle;
-    font-family: 'Roboto', sans-serif;
 }
 
 .align-vertical > div {
@@ -230,6 +230,7 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     display: inline-block;
     vertical-align: middle;
     text-align: left;
+    font-family: 'Roboto', sans-serif;
 }
 
 .whatsapp-contact-bar .user-data h1 {
@@ -250,24 +251,24 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 
 @media only screen and (min-width : 320px) and (max-width : 480px) {
     .whatsapp-contact-bar .user-data h1 {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         margin: 0 0 0 0.3rem;
     }
 
     .whatsapp-contact-bar .user-data h2 {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
         margin: 0 0 0 0.3rem;
     }
 }
 
 @media only screen and (max-width : 320px) {
     .whatsapp-contact-bar .user-data h1 {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
         margin: 0 0 0 0.3rem;
     }
 
     .whatsapp-contact-bar .user-data h2 {
-        font-size: 0.3rem;
+        font-size: 0.4rem;
         margin: 0 0 0 0.3rem;
     }
 }
