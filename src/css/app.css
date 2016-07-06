@@ -1,0 +1,155 @@
+html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.app-menu-links {
+    text-align: right;
+}
+
+.row {
+    max-width: 73.75rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#main-navigation {
+    height: 2.1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition: height 0.5s;
+    -moz-transition: height 0.5s;
+    -ms-transition: height 0.5s;
+    transition: height 0.5s;
+}
+
+#main-navigation.open {
+    height: 9.5rem;
+}
+
+.menu-toggle {
+    width: 34px;
+    height: 34px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    top: 18px;
+    right: 7px;
+    border-radius: 100px;
+    background-color: #777;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.menu-toggle .bar:first-child {
+    -webkit-transform: translateY(-6px);
+    -moz-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px);
+}
+
+.menu-toggle.x .bar {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.menu-toggle.x .bar:first-child {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 47.999em) {
+    .app-menu-links {
+        text-align: left;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+.pure-menu-active > .pure-menu-link,
+.pure-menu-link:hover,
+.pure-menu-link:focus {
+    color: #009688;
+}
+
+.phone-container {
+    position: relative;
+    max-width: 400px;
+    margin: 0 3rem;
+}
+
+.phone-top {
+    background: url('../assets/htc-top.png') no-repeat center center;
+    background-size: cover;
+    padding-bottom: 17.625%;
+}
+
+.phone-center {
+    position: relative;
+    background: url('../assets/htc-center.png') no-repeat center center;
+    background-size: cover;
+    padding-bottom: 161.25%;
+}
+
+.phone-bottom {
+    background: url('../assets/htc-bottom.png') no-repeat center center;
+    background-size: cover;
+    padding-bottom: 29.375%;
+}
+
+.phone-whatsapp {
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 96.3%;
+    height: 100%;
+    margin: 0 2.25%;
+    background: #ede9e4;
+    background: -webkit-linear-gradient(top,#ede9e4 0%,#ede9e4 20%,#e5ddd5 100%);
+    background: linear-gradient(to bottom,#ede9e4 0%,#ede9e4 20%,#e5ddd5 100%);
+}
+
+.whatsapp-background {
+    position: relative;
+    background: url('../assets/background.png') no-repeat center center;
+    background-size: cover;
+    padding-bottom: 167%;
+    opacity: 0.3;
+}
+
+.whatsapp-phone-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #054d44;
+    padding-bottom: 6.5%;
+}
+
+.whatsapp-contact-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #075e54;
+    margin-top: 6.5%;
+    padding-bottom: 14.54%;
+}
+
+.chat-options h3 {
+    text-align: center;
+}

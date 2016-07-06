@@ -1,0 +1,21 @@
+{
+  "name": "fake-whatsapp",
+  "authors": [
+    "Giacomo Persichini <giacomopersichini@gmail.com>"
+  ],
+  "description": "Create fake WhatsApp conversations, memes, and whatever your sick imagination makes you do.",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pure": "^0.6.0"
+  }
+}
