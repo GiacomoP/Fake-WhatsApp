@@ -1,3 +1,34 @@
+/* UTILS */
+
+/* Take style from pure-u-1 and add custom width */
+.pure-u-1-9 {
+    display: inline-block;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+    width: 11.1111%;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.ellipsify {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* UTILS END */
+
 html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     font-family: 'Montserrat', sans-serif;
 }
@@ -92,6 +123,7 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     position: relative;
     max-width: 400px;
     margin: 0 3rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 .phone-top {
@@ -142,12 +174,102 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 }
 
 .whatsapp-contact-bar {
+    display: table;
     position: absolute;
     top: 0;
     width: 100%;
+    height: 8.7%;
     background-color: #075e54;
     margin-top: 6.5%;
-    padding-bottom: 14.54%;
+    text-align: center;
+}
+
+.align-vertical.pure-g {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Roboto', sans-serif;
+}
+
+.align-vertical > div {
+    vertical-align: middle;
+}
+
+.whatsapp-sprites {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60%;
+    padding-bottom: 60%;
+    background-image: url('../assets/sprites.png');
+    background-repeat: no-repeat;
+    background-size: 400%
+}
+
+.whatsapp-sprites.arrow-left {
+    background-position: 0 0;
+}
+
+.whatsapp-sprites.phone {
+    background-position: 33.333% 0;
+}
+
+.whatsapp-sprites.attachment {
+    background-position: 66.666% 0;
+}
+
+.whatsapp-sprites.menu {
+    background-position: 100% 0;
+}
+
+.whatsapp-contact-bar .user-picture {
+    width: 100%;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.whatsapp-contact-bar .user-data {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.whatsapp-contact-bar .user-data h1 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin: 0 0 0 0.5rem;
+}
+
+.whatsapp-contact-bar .user-data h2 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #eef4f4;
+    letter-spacing: 0.5px;
+    margin: 0.2rem 0 0 0.5rem;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    .whatsapp-contact-bar .user-data h1 {
+        font-size: 0.8rem;
+        margin: 0 0 0 0.3rem;
+    }
+
+    .whatsapp-contact-bar .user-data h2 {
+        font-size: 0.5rem;
+        margin: 0 0 0 0.3rem;
+    }
+}
+
+@media only screen and (max-width : 320px) {
+    .whatsapp-contact-bar .user-data h1 {
+        font-size: 0.6rem;
+        margin: 0 0 0 0.3rem;
+    }
+
+    .whatsapp-contact-bar .user-data h2 {
+        font-size: 0.3rem;
+        margin: 0 0 0 0.3rem;
+    }
 }
 
 .chat-options h3 {
