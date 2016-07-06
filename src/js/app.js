@@ -25,4 +25,7 @@
 
     toggle.on('click', toggleMenu);
     $(window).on(WINDOW_CHANGE_EVENT, closeMenu);
+    $('img').on('dragstart', function(e) {
+        e.preventDefault();
+    });
 })(this, this.document, jQuery);

@@ -171,7 +171,8 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     vertical-align: middle;
 }
 
-.align-vertical > div {
+.align-vertical > div,
+.align-vertical > span {
     vertical-align: middle;
 }
 
@@ -185,13 +186,26 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     text-align: right;
 }
 
-.whatsapp-phone-bar .phone-battery-container {
+.phone-sprites {
     display: inline-block;
+    width: 3.8961%;         /* We want a 15px height on a 385px width bar */
     max-width: 15px;
+    padding-bottom: 3.8961%;
+    background-image: url('../assets/phone-sprites.png');
+    background-repeat: no-repeat;
+    background-size: 300%;
 }
 
-.whatsapp-phone-bar img {
-    width: 100%;
+.phone-sprites.connection {
+    background-position: 0 0;
+}
+
+.phone-sprites.signal {
+    background-position: 50% 0;
+}
+
+.phone-sprites.battery {
+    background-position: 100% 0;
 }
 
 #phone-battery-text,
@@ -210,7 +224,7 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
 @media only screen and (max-width : 480px) {
     #phone-battery-text,
     #phone-time {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 }
 
