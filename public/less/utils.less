@@ -27,3 +27,13 @@
     -ms-transition: @arg;
     transition: @arg;
 }
+
+.make-sprites (@path, @total) {
+    background-image: url(@path);
+    background-size: 100% * @total;
+    background-repeat: no-repeat;
+}
+
+.get-sprite (@id, @total) {
+    background-position: 100% * (@id / (@total - 1)) 0;
+}

@@ -3,23 +3,22 @@
     vertical-align: middle;
     width: 60%;
     padding-bottom: 60%;
-    background-image: url('../images/sprites.png');
-    background-repeat: no-repeat;
-    background-size: 400%
-}
+    @sprites-tot: 4;
+    .make-sprites('../images/sprites.png', @sprites-tot);
 
-.whatsapp-sprites.arrow-left {
-    background-position: 0 0;
-}
+    &.arrow-left {
+        .get-sprite(0, @sprites-tot);
+    }
 
-.whatsapp-sprites.phone {
-    background-position: 33.333% 0;
-}
+    &.phone {
+        .get-sprite(1, @sprites-tot);
+    }
 
-.whatsapp-sprites.attachment {
-    background-position: 66.666% 0;
-}
+    &.attachment {
+        .get-sprite(2, @sprites-tot);
+    }
 
-.whatsapp-sprites.menu {
-    background-position: 100% 0;
+    &.menu {
+        .get-sprite(3, @sprites-tot);
+    }
 }
