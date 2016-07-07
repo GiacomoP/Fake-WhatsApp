@@ -29,4 +29,5 @@ module.exports = function(grunt) {
     // Available tasks
     grunt.registerTask('default', ['less']);
     grunt.registerTask('dev', ['less:dev']);
+    grunt.registerTask('production', ['less:production']);
 };
