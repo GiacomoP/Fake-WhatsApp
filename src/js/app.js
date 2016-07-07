@@ -4,7 +4,7 @@
         WINDOW_CHANGE_EVENT = ('onorientationchange' in window) ? 'orientationchange' : 'resize';
 
     function toggleHorizontal() {
-        menu.find('.app-menu-links').toggleClass('pure-menu-horizontal');
+        menu.find('.navigation-links').toggleClass('pure-menu-horizontal');
     };
 
     function toggleMenu() {

@@ -1,122 +1,11 @@
-/* UTILS */
-
-/* Take style from pure-u-1 and add custom width */
-.pure-u-1-9 {
-    display: inline-block;
-    zoom: 1;
-    letter-spacing: normal;
-    word-spacing: normal;
-    vertical-align: top;
-    text-rendering: auto;
-    width: 11.1111%;
-}
-
-.noselect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: default;
-}
-
-.ellipsify {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-/* UTILS END */
+@import "variables";
+@import "layout";
+@import "utils";
+@import "top-navigation";
 
 html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     font-family: 'Montserrat', sans-serif;
-}
-
-.app-menu-links {
-    text-align: right;
-}
-
-.row {
-    max-width: 73.75rem;
-    width: 100%;
-    margin: 0 auto;
-}
-
-#main-navigation {
-    height: 2.1rem;
-    margin-bottom: 1rem;
-    overflow: hidden;
-    -webkit-font-smoothing: antialiased;
-    -webkit-transition: height 0.5s;
-    -moz-transition: height 0.5s;
-    -ms-transition: height 0.5s;
-    transition: height 0.5s;
-}
-
-#main-navigation.open {
-    height: 9.5rem;
-}
-
-.menu-toggle {
-    width: 34px;
-    height: 34px;
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: none;
-}
-
-.menu-toggle .bar {
-    display: block;
-    width: 20px;
-    height: 2px;
-    position: absolute;
-    top: 18px;
-    right: 7px;
-    border-radius: 100px;
-    background-color: #777;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
-.menu-toggle .bar:first-child {
-    -webkit-transform: translateY(-6px);
-    -moz-transform: translateY(-6px);
-    -ms-transform: translateY(-6px);
-    transform: translateY(-6px);
-}
-
-.menu-toggle.x .bar {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.menu-toggle.x .bar:first-child {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-
-@media screen and (max-width: 47.999em) {
-    .app-menu-links {
-        text-align: left;
-    }
-    .menu-toggle {
-        display: block;
-    }
-}
-
-.pure-menu-active > .pure-menu-link,
-.pure-menu-link:hover,
-.pure-menu-link:focus {
-    color: #009688;
+    font-size: 16px;
 }
 
 .phone-container {
@@ -124,7 +13,7 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     max-width: 400px;
     margin: 0 auto;
     padding: 0 20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: @whatsapp-font;
 }
 
 .phone-top {
@@ -275,7 +164,7 @@ html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
     display: inline-block;
     vertical-align: middle;
     text-align: left;
-    font-family: 'Roboto', sans-serif;
+    font-family: @whatsapp-font;
 }
 
 .whatsapp-contact-bar .user-data h1 {

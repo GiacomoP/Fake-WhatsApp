@@ -1,0 +1,29 @@
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.ellipsify {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.transform (@arg) {
+    -webkit-transform: @arg;
+    -moz-transform: @arg;
+    -ms-transform: @arg;
+    transform: @arg;
+}
+
+.transition (@arg) {
+    -webkit-transition: @arg;
+    -moz-transition: @arg;
+    -ms-transition: @arg;
+    transition: @arg;
+}
