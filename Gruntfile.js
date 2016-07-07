@@ -4,20 +4,20 @@ module.exports = function(grunt) {
         less: {
             dev: {
                 options: {
-                    paths: ["src/css"]
+                    paths: ["public/css"]
                 },
                 files: {
-                    "src/css/app.css": "src/less/app.less"
+                    "public/css/app.css": "public/less/app.less"
                 }
             },
             production: {
                 options: {
-                    paths: ["src/css"],
+                    paths: ["public/css"],
                     compress: true,
                     cleancss: true
                 },
                 files: {
-                    "src/css/app.css": "src/less/app.less"
+                    "public/css/app.css": "public/less/app.less"
                 }
             }
         }

@@ -13,8 +13,8 @@ Clone this repository, then:
 * `$ npm install`
 * `$ grunt dev|production`
 
-And open src/index.html with your browser.
+And open public/index.html with your browser.
 
 # Credits
-##### HTC One Phone SVG ([htc.svg](src/assets/original/htc.svg))
+##### HTC One Phone SVG ([htc.svg](images-src/htc.svg))
 ###### By Rafael Fernandez (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons
