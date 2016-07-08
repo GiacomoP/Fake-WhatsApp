@@ -1,0 +1,43 @@
+@whatsapp-message-bar-desired-height: 65;
+@whatsapp-message-bar-height: 100% * @whatsapp-message-bar-desired-height / @phone-screen-base-width;
+
+@whatsapp-input-desired-height: 48;
+@whatsapp-input-height: 100% * @whatsapp-input-desired-height / @phone-screen-base-width;
+
+.whatsapp-message-bar {
+    position: absolute;
+    bottom: 0;
+    display: table;
+    width: 100%;
+    padding-top: @whatsapp-message-bar-height;
+
+    .whatsapp-input-container {
+        position: absolute;
+        width: 100%;
+
+        .whats-app-message-input {
+            @margin: 100% * 8 / @phone-screen-base-width;
+
+            padding-bottom: @whatsapp-input-height;
+            margin: 0 (@whatsapp-input-height + @margin) 0 @margin;
+            background-color: #fff;
+            border-radius: 8px;
+
+            input {
+                position: absolute;
+                top: 50%;
+                .transform(translateY(-50%));
+                border: 0;
+                padding: 0;
+                margin: 0;
+                font-family: @whatsapp-font;
+                font-size: 18px;
+                color: #cccccc;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
