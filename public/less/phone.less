@@ -4,6 +4,19 @@
     margin: 0 auto;
     padding: 0 20px;
     font-family: @whatsapp-font;
+    font-size: @base-font-size;
+
+    @media only screen and (min-width : 480px) and (max-width : 768px) {
+        font-size: @base-font-size * 0.9;
+    }
+
+    @media only screen and (min-width : 320px) and (max-width : 480px) {
+        font-size: @base-font-size * 0.8;
+    }
+
+    @media only screen and (max-width : 320px) {
+        font-size: @base-font-size * 0.6;
+    }
 }
 
 .phone-top {
@@ -89,12 +102,5 @@
 }
 
 #phone-time {
-    margin-right: 0.4rem;
-}
-
-@media only screen and (max-width : 480px) {
-    #phone-battery-text,
-    #phone-time {
-        font-size: 0.7rem;
-    }
+    margin-right: 0.4em;
 }
