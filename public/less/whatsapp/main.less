@@ -21,10 +21,29 @@
 
 .align-vertical {
     display: table-cell;
-    vertical-align: middle;
+    top: 50%;
+    transform: translateY(-50%);
 
     & > div,
     & > span {
         vertical-align: middle;
     }
+}
+
+@whatsapp-message-bar-desired-height: 65;
+@whatsapp-message-bar-height: 100% * @whatsapp-message-bar-desired-height / @phone-screen-base-width;
+
+.whatsapp-message-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: @whatsapp-message-bar-height;
+}
+
+.whatsapp-chat-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-top: @phone-bar-height + @whatsapp-contact-bar-height;
+    padding-bottom: 100% * (1 + @phone-screen-base-height - @whatsapp-message-bar-desired-height - @phone-bar-desired-height - @whatsapp-contact-bar-desired-height) / @phone-screen-base-width;
 }

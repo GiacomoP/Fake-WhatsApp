@@ -17,6 +17,7 @@
     background: url('../images/htc-center.png') no-repeat center center;
     background-size: cover;
     padding-bottom: 100% * (1290 / 800);
+    height: 100%;
 }
 
 .phone-bottom {
@@ -25,29 +26,43 @@
     padding-bottom: 100% * (235 / 800);
 }
 
+/* Variables for proportion calculations and such... */
+@actual-screen-width-percentage: 0.963;
+@phone-screen-base-width: 400 * @actual-screen-width-percentage;
+@phone-screen-base-height: 645;
+
 .phone-screen-content {
     position: absolute;
     top: 0;
     left: -3px;
-    width: 96.3%;
+    width: 100% * @actual-screen-width-percentage;
     height: 100%;
     margin: 0 2.25%;
 }
+
+@phone-bar-desired-height: 25;
+@phone-bar-height: 100% * (@phone-bar-desired-height / @phone-screen-base-width);
 
 .phone-bar {
     display: table;
     position: absolute;
     top: 0;
     width: 100%;
-    height: 4%;
     text-align: right;
+    padding-bottom: @phone-bar-height;
+}
+
+.phone-icons-container {
+    position: absolute;
+    right: 0;
+    width: 100%;
 }
 
 .phone-sprites {
     display: inline-block;
-    width: 100% * 15 / 385;     /* We want a 15px side square on a 385px width bar */
+    width: 100% * 15 / @phone-screen-base-width;
     max-width: 15px;
-    padding-bottom: 100% * 15 / 385;
+    padding-bottom: 100% * 15 / @phone-screen-base-width;
     @sprites-tot: 3;
     .make-sprites('../images/phone-sprites.png', @sprites-tot);
 
