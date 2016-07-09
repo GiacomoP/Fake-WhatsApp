@@ -3,7 +3,7 @@
     vertical-align: middle;
     width: 60%;
     padding-bottom: 60%;
-    @sprites-tot: 4;
+    @sprites-tot: 5;
     .make-sprites('../images/sprites.png', @sprites-tot);
 
     &.arrow-left {
@@ -20,5 +20,9 @@
 
     &.menu {
         .get-sprite(3, @sprites-tot);
+    }
+
+    &.microphone {
+        .get-sprite(4, @sprites-tot);
     }
 }

@@ -15,13 +15,19 @@
         position: absolute;
         width: 100%;
 
-        .whats-app-message-input {
-            @margin: 100% * 8 / @phone-screen-base-width;
+        @margin: 100% * 8 / @phone-screen-base-width;
+        .whatsapp-message-input {
+            @right-margin: @whatsapp-input-height + @margin * 2;
 
+            position: relative;
             padding-bottom: @whatsapp-input-height;
-            margin: 0 (@whatsapp-input-height + @margin) 0 @margin;
+            margin: 0 @right-margin 0 @margin;
             background-color: #fff;
             border-radius: 8px;
+
+            @media only screen and (max-width : 480px) {
+                border-radius: 5px;
+            }
 
             input {
                 position: absolute;
@@ -31,13 +37,25 @@
                 padding: 0;
                 margin: 0;
                 font-family: @whatsapp-font;
-                font-size: 18px;
+                font-size: 1.1em;
                 color: #cccccc;
+                width: 100% - @right-margin - @margin;
 
                 &:focus {
                     outline: none;
                 }
             }
+        }
+
+        .whatsapp-rec-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 12.46105919%;
+            padding-bottom: 12.46105919%;
+            margin-right: @margin;
+            border-radius: 50%;
+            background-color: #00897b;
         }
     }
 }
