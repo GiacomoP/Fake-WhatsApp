@@ -29,17 +29,39 @@
                 border-radius: 5px;
             }
 
+            @smiley-width: 7%;
+            @smiley-margin: 4%;
+            @smiley-total-width: (@smiley-margin * 2 + @smiley-width);
+            .whatsapp-sprites {
+                position: absolute;
+                top: 50%;
+                .transform(translateY(-50%));
+                width: @smiley-width;
+                padding-bottom: @smiley-width;
+                margin: 0 @smiley-margin;
+
+                &.smiley {
+                    left: 0;
+                }
+
+                &.camera {
+                    right: 0;
+                }
+            }
+
             input {
                 position: absolute;
                 top: 50%;
                 .transform(translateY(-50%));
                 border: 0;
                 padding: 0;
-                margin: 0;
+                /* Leave space for smiley icon to the left */
+                margin: 0 0 0 @smiley-total-width;
                 font-family: @whatsapp-font;
                 font-size: 1.1em;
                 color: #cccccc;
-                width: 100% - @right-margin - @margin;
+                /* Take into account camera and mic icons to the right */
+                width: 100% - @smiley-total-width - @right-margin - @margin;
 
                 &:focus {
                     outline: none;
@@ -51,8 +73,8 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 12.46105919%;
-            padding-bottom: 12.46105919%;
+            width: @whatsapp-input-height;
+            padding-bottom: @whatsapp-input-height;
             margin-right: @margin;
             border-radius: 50%;
             background-color: #00897b;

@@ -16,5 +16,8 @@ Clone this repository, then:
 And open public/index.html with your browser.
 
 # Credits
+##### WhatsApp design, layout, icon sprites etc...
+###### by [WhatsApp Inc.](https://www.whatsapp.com/)
+***
 ##### HTC One Phone SVG ([htc.svg](images-src/htc.svg))
-###### By Rafael Fernandez (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons
+###### By Rafael Fernandez (Own work) [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons
