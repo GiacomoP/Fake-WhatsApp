@@ -28,6 +28,12 @@
     transition: @arg;
 }
 
+.box-shadow (@arg) {
+    -webkit-box-shadow: @arg;
+    -moz-box-shadow:    @arg;
+    box-shadow:         @arg;
+}
+
 .make-sprites (@path, @total) {
     background-image: url(@path);
     background-size: 100% * @total;
