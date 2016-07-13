@@ -1,47 +1,80 @@
 import $ from 'jquery';
-import Phone from '../entities/phone.es6';
-import r from '../radio.es6';
 
 class PhoneView {
     /**
-     * @param {Object} selector - A jQuery selector of the phone container.
+     * @param {Object}      selector    - A jQuery selector of the phone container.
+     * @param {Phone}       phone       - An instance of Phone.
      */
-    constructor(selector) {
+    constructor(selector, phone) {
+        /**
+         * Container element.
+         * @type {jQuery}
+         */
         this.$el = $(selector);
-        this.phone = new Phone();
-        this._setHandlers();
+
+        /**
+         * @type {Phone}
+         */
+        this._phone = phone;
+
+        this.init();
     }
 
     /**
-     * @private
+     * Populates the view with current values and listens for changes.
      */
-    _setTime(value) {
-        if (value.length < 5 || value.length > 8) {
-            return;
+    init() {
+        let me = this;
+
+        this._phone.onChange(this.update, this);
+
+        // Show data on data binded elements
+        this.$el.find('[data-bind]').each(function() {
+            let bind = $(this).attr('data-bind'),
+                tmp = bind.split('::'),
+                value = {};
+
+            if (tmp[0] === 'phone') {
+                value = me._phone;
+                tmp.shift();
+            }
+
+            tmp.forEach(function(attr) {
+                value = value[attr];
+                if (typeof value === 'undefined') {
+                    throw new Error(`Invalid data binding attribute "${bind}".`);
+                }
+            });
+
+            if (bind === 'phone::battery') {
+                value += '%';
+            }
+
+            switch ($(this).prop('tagName')) {
+                default:
+                case 'SPAN':
+                    $(this).text(value);
+                    break;
+                case 'INPUT':
+                    $(this).val(value);
+                    break;
+                case 'IMG':
+                    $(this).attr('src', value);
+                    break;
+            }
+        });
+    }
+
+    /**
+     * Updates the values in the view.
+     * @param {string} attr - The changed attribute.
+     */
+    update(attr) {
+        let value = this._phone[attr];
+        if (attr === 'battery') {
+            value += '%';
         }
-        this.phone.time = value;
-        $('#phone-time').text(value);
-    }
-
-    /**
-     * @private
-     */
-    _setBattery(value) {
-        if (value < 1) {
-            value = 1;
-        } else if (value > 100) {
-            value = 100;
-        }
-        this.phone.battery = value;
-        $('#phone-battery-text').text(`${value}%`);
-    }
-
-    /**
-     * @private
-     */
-    _setHandlers() {
-        r.addListener('phone::setTime', this._setTime, this);
-        r.addListener('phone::setBattery', this._setBattery, this);
+        this.$el.find('[data-bind="phone::' + attr + '"]').text(value);
     }
 }
 

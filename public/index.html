@@ -54,9 +54,9 @@
                                 <div class="align-vertical phone-icons-container">
                                     <span id="phone-connection" class="phone-sprites connection"></span>
                                     <span id="phone-signal" class="phone-sprites signal"></span>
-                                    <span id="phone-battery-text">67%</span>
+                                    <span id="phone-battery-text" data-bind="phone::battery"></span>
                                     <span id="phone-battery" class="phone-sprites battery"></span>
-                                    <span id="phone-time">11:42</span>
+                                    <span id="phone-time" data-bind="phone::time"></span>
                                 </div>
                             </div>
                             <div class="whatsapp-contact-bar">
@@ -65,12 +65,12 @@
                                         <span class="whatsapp-sprites arrow-left"></span>
                                     </div>
                                     <div class="pure-u-1-12">
-                                        <img class="user-picture" src="images/anon-user.png" alt="User">
+                                        <img class="user-picture" src="" alt="User" data-bind="phone::whatsApp::user::image">
                                     </div>
                                     <div class="pure-u-1-2">
                                         <div class="user-data">
-                                            <h1 id="contact-name" class="ellipsify">Contact Name</h1>
-                                            <h2 id="last-seen" class="ellipsify">last seen today at 10:36</h2>
+                                            <h1 id="contact-name" class="ellipsify" data-bind="phone::whatsApp::user::name"></h1>
+                                            <h2 id="last-seen" class="ellipsify" data-bind="phone::whatsApp::user::lastSeen"></h2>
                                         </div>
                                     </div>
                                     <div class="pure-u-1-9">
@@ -89,7 +89,7 @@
                                 <div class="align-vertical whatsapp-input-container">
                                     <div class="whatsapp-message-input">
                                         <span class="whatsapp-sprites smiley"></span>
-                                        <input type="text" value="Type a message" title="WhatsApp message input">
+                                        <input type="text" value="" title="WhatsApp message input" data-bind="phone::whatsApp::message::string">
                                         <span class="whatsapp-sprites camera"></span>
                                     </div>
                                     <div class="whatsapp-sprites microphone whatsapp-rec-button"></div>
@@ -115,11 +115,26 @@
                             </div>
                             <div class="pure-u-1 pure-u-sm-1-3">
                                 <label for="opts-phone-time">Phone Clock</label>
-                                <input id="opts-phone-time" class="pure-u-23-24" type="text" value="11:42" maxlength="8">
+                                <input id="opts-phone-time" class="pure-u-23-24" type="text" value="" maxlength="8" data-bind="phone::time">
                             </div>
                             <div class="pure-u-1 pure-u-sm-1-3">
                                 <label for="opts-phone-battery">Battery</label>
-                                <input id="opts-phone-battery" class="pure-u-23-24" type="text" value="67" maxlength="3">
+                                <input id="opts-phone-battery" class="pure-u-23-24" type="number" value="" min="1" max="100" data-bind="phone::battery">
+                            </div>
+                        </div>
+                        <legend>Contact</legend>
+                        <div class="pure-g">
+                            <div class="pure-u-1 pure-u-sm-1-3">
+                                <label for="opts-contact-name">Name</label>
+                                <input id="opts-contact-name" class="pure-u-23-24" type="text" value="" data-bind="phone::whatsApp::user::name">
+                            </div>
+                            <div class="pure-u-1 pure-u-sm-1-3">
+                                <label for="opts-contact-last-seen">Last Seen</label>
+                                <input id="opts-contact-last-seen" class="pure-u-23-24" type="text" value="" data-bind="phone::whatsApp::user::lastSeen">
+                            </div>
+                            <div class="pure-u-1 pure-u-sm-1-3">
+                                <label for="opts-contact-image">Image</label>
+                                <input id="opts-contact-image" class="pure-u-23-24" type="text" value="">
                             </div>
                         </div>
                     </fieldset>
