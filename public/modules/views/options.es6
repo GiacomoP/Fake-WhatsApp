@@ -19,11 +19,11 @@ class OptionsView {
         this._phone = phone;
 
         /**
-         * Cached reference to options form.
+         * Cached reference to options forms.
          * @type {jQuery}
          * @private
          */
-        this._form = this.$el.find('form');
+        this._forms = this.$el.find('form');
 
         this.init();
     }
@@ -63,9 +63,9 @@ class OptionsView {
     _setHandlers() {
         let me = this;
 
-        // Not a real form
-        this._form.off('submit');
-        this._form.on('submit', function(e) {
+        // Not real forms
+        this._forms.off('submit');
+        this._forms.on('submit', function(e) {
             e.preventDefault();
         });
 
