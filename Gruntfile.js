@@ -65,15 +65,43 @@ module.exports = function(grunt) {
                     "public/js/app.js": ["public/modules/app.es6"]
                 }
             }
+        },
+
+        // Minify Javascript
+        uglify: {
+            dev: {
+                options: {
+                    beautify: true,
+                    report: 'none'
+                },
+                files: {
+                    "public/js/app.min.js": "public/js/app.js"
+                }
+            },
+            production: {
+                options: {
+                    compress: {
+                        dead_code: true,
+                        drop_console: true,
+                        conditionals: true
+                    },
+                    preserveComments: false,
+                    report: 'none'
+                },
+                files: {
+                    "public/js/app.min.js": "public/js/app.js"
+                }
+            }
         }
     });
 
     // Load plugins
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks("grunt-browserify");
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Available tasks
     grunt.registerTask('default', ['less', 'browserify']);
-    grunt.registerTask('dev', ['less:dev', 'browserify:dev']);
-    grunt.registerTask('production', ['less:production', 'browserify:production']);
+    grunt.registerTask('dev', ['less:dev', 'browserify:dev', 'uglify:dev']);
+    grunt.registerTask('production', ['less:production', 'browserify:production', 'uglify:production']);
 };
