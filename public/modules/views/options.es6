@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import Message from '../entities/message.es6';
+import MessageOwner from '../entities/message-owner.es6';
 
 class OptionsView {
     /**
@@ -74,6 +76,16 @@ class OptionsView {
             let bind = $(this).attr('data-bind');
             let attr = bind.substring(bind.indexOf('::') + 2);
             me._phone.set(attr, $(this).val(), true);
+        });
+
+        this.$el.find('#send-message').on('click touchstart', function() {
+            let message = new Message({
+                time: '10:00',
+                content: $('#message-content').val(),
+                owner: MessageOwner.fromHtml(me.$el.find('input[name="sender"]:checked').val())
+            });
+            me._phone.whatsApp.pushMessage(message);
+            me.$el.find('form.chat-options-conversation')[0].reset();
         });
     }
 }
